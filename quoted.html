@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    QUOTED
+{% endblock %}
+
+{% block main %}
+    <ul> 
+       {% for row in x %} 
+           <li>{{ row }} = {{ x[row] }};</li>
+       {% endfor %}
+    </ul>
+{% endblock %}

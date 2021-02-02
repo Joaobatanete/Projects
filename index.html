@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    INDEX
+{% endblock %}
+
+{% block main %}
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+    {% for row in portfolio %}
+                <tr>
+                    <td>{{ row['Symbol'] }}</td>
+                    <td>{{ row['Name'] }}</td>
+                    <td>{{ row['Shares'] }}</td>
+                    <td>${{ row['Price'] }}</td>
+                    <td>${{ row['Total'] }}</td>
+                </tr>
+
+            {% endfor %}
+                <tr>
+                    <td>CASH</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>${{ total_cash }}</td>
+                </tr>
+        </tbody>
+    </table>
+    </form>
+
+{% endblock %}

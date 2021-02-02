@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+    {% for row in history %}
+                <tr>
+                    <td>{{ row['Action'] }}</td>
+                    <td>{{ row['Symbol'] }}</td>
+                    <td>{{ row['Name'] }}</td>
+                    <td>{{ row['Shares'] }}</td>
+                    <td>${{ row['Price'] }}</td>
+                    <td>${{ row['Total'] }}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    </form>
+
+{% endblock %}
